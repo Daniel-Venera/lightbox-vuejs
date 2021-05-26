@@ -1,0 +1,195 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.lightbox__img {
+  position: fixed;
+}
+
+.lightbox__close {
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lightbox__close::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00d";
+  display: inline-block;
+  font-weight: 900;
+  color: white;
+  font-size: 40px;
+}
+
+.lightbox__btn {
+  position: fixed;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -40px;
+  background-color: #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox__btn:after {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  color: white;
+  font-size: 40px;
+}
+
+.lightbox__prev {
+  left: 20px;
+}
+
+.lightbox__prev:after {
+  content: "\f053";
+}
+
+.lightbox__next {
+  right: 20px;
+}
+
+.lightbox__next:after {
+  content: "\f054";
+}
+
+.lightbox__loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+}
+
+.lightbox__loading:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: block;
+  -webkit-animation: lightbox-loading 0.5s ease infinite;
+          animation: lightbox-loading 0.5s ease infinite;
+}
+
+.lightbox-fade-enter-active, .lightbox-fade-leave-active {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.lightbox-fade-enter, .lightbox-fade-leave-active {
+  opacity: 0;
+}
+
+.lightbox-next-enter-active, .lightbox-next-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.lightbox-next-enter {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
+.lightbox-next-leave-active {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+.lightbox-prev-enter-active, .lightbox-prev-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.lightbox-prev-enter {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+.lightbox-prev-leave-active {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
+@-webkit-keyframes lightbox-loading {
+  0%,
+  100% {
+    opacity: 0.5;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lightbox-loading {
+  0%,
+  100% {
+    opacity: 0.5;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=lightbox.css.map */
